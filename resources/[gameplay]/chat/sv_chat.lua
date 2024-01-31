@@ -239,7 +239,7 @@ end)
 
 RegisterCommand('say', function(source, args, rawCommand)
     routeMessage(source, (source == 0) and 'console' or GetPlayerName(source), rawCommand:sub(5), nil, true)
-end)
+end, false)
 
 -- command suggestions for clients
 local function refreshCommands(player)

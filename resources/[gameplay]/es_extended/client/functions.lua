@@ -1,4 +1,4 @@
----@diagnostic disable: param-type-mismatch
+---@diagnostic disable: param-type-mismatch, duplicate-set-field
 ESX = {}
 Core = {}
 ESX.PlayerData = {}
@@ -1366,6 +1366,7 @@ local mismatchedTypes = {
 ---@return string
 function ESX.GetVehicleType(model)
     model = type(model) == 'string' and joaat(model) or model
+---@diagnostic disable-next-line: missing-return-value
     if not IsModelInCdimage(model) then return end
     if mismatchedTypes[model] then
         return mismatchedTypes[model]

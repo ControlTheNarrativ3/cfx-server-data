@@ -1,3 +1,4 @@
+---@diagnostic disable: param-type-mismatch
 RconLog({ msgType = 'serverStart', hostname = 'lovely', maxplayers = 32 })
 
 RegisterServerEvent('rlPlayerActivated')
@@ -5,9 +6,18 @@ RegisterServerEvent('rlPlayerActivated')
 local names = {}
 
 AddEventHandler('rlPlayerActivated', function()
-    RconLog({ msgType = 'playerActivated', netID = source, name = GetPlayerName(source), guid = GetPlayerIdentifiers(source)[1], ip = GetPlayerEP(source) })
+    RconLog({ 
+        msgType = 'playerActivated',
+        netID = source,
+        name = GetPlayerName(source),
+        guid = GetPlayerIdentifiers(source)[1],
+        ip = GetPlayerEP(source)
+    })
 
-    names[source] = { name = GetPlayerName(source), id = source }
+    names[source] = {
+        name = GetPlayerName(source),
+        id = source
+    }
 
 	if GetHostId() then
 		TriggerClientEvent('rlUpdateNames', GetHostId())

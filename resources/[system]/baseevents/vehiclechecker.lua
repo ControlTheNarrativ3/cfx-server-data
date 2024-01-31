@@ -28,7 +28,7 @@ Citizen.CreateThread(function()
 				currentVehicle = GetVehiclePedIsUsing(ped)
 				currentSeat = GetPedVehicleSeat(ped)
 				local model = GetEntityModel(currentVehicle)
-				local name = GetDisplayNameFromVehicleModel()
+				local name = GetDisplayNameFromVehicleModel(model)
 				local netId = VehToNet(currentVehicle)
 				TriggerServerEvent('baseevents:enteredVehicle', currentVehicle, currentSeat, GetDisplayNameFromVehicleModel(GetEntityModel(currentVehicle)), netId)
 			end
@@ -36,7 +36,7 @@ Citizen.CreateThread(function()
 			if not IsPedInAnyVehicle(ped, false) or IsPlayerDead(PlayerId()) then
 				-- bye, vehicle
 				local model = GetEntityModel(currentVehicle)
-				local name = GetDisplayNameFromVehicleModel()
+				local name = GetDisplayNameFromVehicleModel(model)
 				local netId = VehToNet(currentVehicle)
 				TriggerServerEvent('baseevents:leftVehicle', currentVehicle, currentSeat, GetDisplayNameFromVehicleModel(GetEntityModel(currentVehicle)), netId)
 				isInVehicle = false

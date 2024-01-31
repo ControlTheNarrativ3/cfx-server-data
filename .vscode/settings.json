@@ -1,0 +1,9 @@
+{
+    "Lua.diagnostics.globals": [
+        "RconLog",
+        "MySQL",
+        "OnPlayerData",
+        "GetPlayerEP",
+        "RconPrint"
+    ]
+}

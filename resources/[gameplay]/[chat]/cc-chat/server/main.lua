@@ -1,7 +1,7 @@
 local svConfig = {}
 
 -- Configuration
- svConfig.versionChecker = true -- Version Checker
+ svConfig.versionChecker = false -- Version Checker
  svConfig.supportChecker = true -- Support Checker (If you use exports, it is recommended that you leave this on)
 
 -- Script

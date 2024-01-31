@@ -18,9 +18,7 @@ chat_theme 'ccChat' {
     }
 }
 
-exports {
-    'getTimestamp'
-}
+exports {'getTimestamp'}
 
 game 'common'
 fx_version 'cerulean'

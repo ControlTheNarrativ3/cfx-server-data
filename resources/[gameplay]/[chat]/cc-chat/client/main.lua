@@ -1,6 +1,7 @@
+---@diagnostic disable: lowercase-global
 function getTimestamp()
     local meridiem = 'AM'
-    year , month , day , hour , minute , second = ''
+    year , month , day , hour , minute , second = '', '', '', '', '', ''
     if GetGameName() == 'fivem' then
         year , month , day , hour , minute , second = GetLocalTime()
     elseif GetGameName() == 'redm' then

@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 local ccChat = exports['cc-chat']
 ESX = nil
 QBCore = nil

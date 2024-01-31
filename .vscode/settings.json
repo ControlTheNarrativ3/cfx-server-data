@@ -5,5 +5,8 @@
         "OnPlayerData",
         "GetPlayerEP",
         "RconPrint"
+    ],
+    "Lua.diagnostics.disable": [
+        "param-type-mismatch"
     ]
 }

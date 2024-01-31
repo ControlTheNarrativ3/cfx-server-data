@@ -4,7 +4,12 @@
         "MySQL",
         "OnPlayerData",
         "GetPlayerEP",
-        "RconPrint"
+        "RconPrint",
+        "lib",
+        "cache",
+        "TranslateCap",
+        "ESX",
+        "N_0x4e096588b13ffeca"
     ],
     "Lua.diagnostics.disable": [
         "param-type-mismatch"

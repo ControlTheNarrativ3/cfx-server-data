@@ -12,10 +12,23 @@ $(()=>{
             $("#armourBar").css({"width": Math.round(e.armour) + "%"});
             $('#playerId').text(e.playerId);
             $('#playerId').text(e.playerId);
-            $('.fa-fingerprint').css({"color": "#3498db","text-shadow": "0 0 10px rgba(52, 152, 219, 0.8), 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4), 0 0 40px rgba(52, 152, 219, 0.2)"})
+            $('#maxSpeed').text(e.maxSpeed);
+            $('#vehicleFuel').text(e.vehicleFuel);
+            $('.fa-fingerprint').css({"color": "#3498db","text-shadow": "0 0 10px rgba(52, 152, 219, 0.8), 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4), 0 0 40px rgba(52, 152, 219, 0.2)"});
+            $('.fa-gauge-high').css({"color": "#00ffcc","text-shadow": "0 0 10px rgba(52, 152, 219, 0.8), 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4), 0 0 40px rgba(52, 152, 219, 0.2)"});
+            $('.fa-gas-pump').css({"color": "#66ff99","text-shadow": "0 0 10px rgba(52, 152, 219, 0.8), 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4), 0 0 40px rgba(52, 152, 219, 0.2)"})
         }
 
-
+        if (e.isInVehicle) {
+            $('#maxSpeed').text(e.maxSpeed).fadeIn(100);
+            $('#vehicleFuel').text(e.vehicleFuel).fadeIn(100);
+            $('.fa-gauge-high, .fa-gas-pump').fadeIn(100);
+        } else {
+            $('#maxSpeed').fadeOut(100);
+            $('#vehicleFuel').fadeOut(100);
+            $('.fa-gauge-high, .fa-gas-pump').fadeOut(100);
+        }
+        
         if (Math.round(e.health) >= 26) {
             $("#healthBar").css({"background-color": "rgb(231, 76, 60)","box-shadow": "0 0 10px rgba(231, 76, 60, 0.8), 0 0 20px rgba(231, 76, 60, 0.6), 0 0 30px rgba(231, 76, 60, 0.4), 0 0 40px rgba(231, 76, 60, 0.2)"})              
             $(".fa-heart").css({"color": "rgb(231, 76, 60)"}) 
